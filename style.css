@@ -17,6 +17,12 @@
     overflow: hidden;
 }
 
+
+body {
+    margin: auto;
+    height: 99.5vh;
+}
+
 .main_table {
     table-layout: fixed;
     width: 100%;
@@ -81,4 +87,56 @@
     margin-top: 12%;
     visibility: hidden;
     text-align: center;
+}
+
+.timer-container {
+    height: 25px;
+    background-color:#010a78;
+    position: relative;
+}
+  
+.timer-container .timer-bar {
+    position: absolute;
+    height: 100%;
+    background-color: #d7a04b;
+    
+}
+  
+#play-timer-animation {
+    animation: timer-bar-animation 6s  1;
+}
+
+#play-timer-animation-double {
+    animation: timer-bar-animation-double 12s 1;
+}
+  
+@keyframes timer-bar-animation {
+    0% {width: 0%}
+    100% {width: 100%}
+}
+
+@keyframes timer-bar-animation-double {
+    0% {width: 0%;}
+    100% {width: 100%;}
+}
+
+.choices {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.choices > p {
+    margin: 0;
+    margin-bottom: 10px;    
+    outline: 2px solid #d7a04b;
+    border-radius: 4px;
+    margin: 10px;
+    padding: 0.5em;
+}
+
+.choices >p:hover {
+    text-decoration: underline;
+    cursor: pointer;
 }
