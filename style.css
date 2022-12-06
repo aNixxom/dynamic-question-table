@@ -1,0 +1,84 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Graduate&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+:root {
+    /* Blue Theme  (default)*/
+    --theme-blue-points-color: #d7a04b;
+    --theme-blue-box-background-color: #010a78;
+    --theme-blue-font: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    --theme-blue-settings-header-color:white;
+
+    /* Global Styling */
+    --global-box-font-size: 4vw;
+    --global-box-borders: black solid 2px;
+    --global-border-radius: 4px;  
+
+    user-select: none;
+    overflow: hidden;
+}
+
+.main_table {
+    table-layout: fixed;
+    width: 100%;
+    font-size: var(--global-box-font-size);
+    border-width: 1px;
+    border-color: black;
+    background-color: black;
+    border-radius: 5px;
+}
+
+.headers, .headers-category {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 3vw;
+    border-radius: var(--global-border-radius);
+    width: 25%;
+    border: var(--global-box-borders);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    background-color: var(--theme-blue-box-background-color);
+    color: white;
+    padding: 5px;
+}
+
+.headers-edit:hover{ 
+    border: solid red 2px;
+}
+
+.headers > th {
+    border: var(--global-box-borders);
+}
+
+.boxes {
+    letter-spacing: 1px;
+    font-size: var(--global-box-font-size);
+    border-radius: var(--global-border-radius);
+    border: var(--global-box-borders);
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--theme-blue-box-background-color);
+    color: var(--theme-blue-points-color);
+    cursor: pointer;
+    transition: transform 2s;
+}
+
+.boxes:hover {
+    border-color: #d7a04b;
+}
+
+.questions {
+    text-shadow:2px 2px black;
+    font-size: 58px;
+    position: absolute;
+    background-color: #010a78;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    border-radius: 4px;
+    color: #d7a04b;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 12%;
+    visibility: hidden;
+    text-align: center;
+}
