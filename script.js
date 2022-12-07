@@ -1,7 +1,6 @@
 let main_table = document.getElementById('main_table')
 let main_table_body = document.createElement('tbody')
 let header_tr = document.createElement("tr")
-let every_id = document.querySelectorAll('*[data-]')
 
 
 header_tr.setAttribute('class', "headers")
@@ -75,5 +74,6 @@ window.addEventListener("click", function(event) {
     main.style.visibility= "hidden"
     question.style.visibility = "visible"
     question.style.top = "0px"
-    question.style.right = "0p"
+    question.style.right = "0px"
+    question.style.left = "0px"
 })
