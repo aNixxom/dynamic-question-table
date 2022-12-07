@@ -1,10 +1,9 @@
-let main_table = document.getElementById('main_table')
-let main_table_body = document.createElement('tbody')
-let header_tr = document.createElement("tr")
-
-
+const main_table = document.getElementById('main_table')
+const main_table_body = document.createElement('tbody')
+const header_tr = document.createElement("tr")
 header_tr.setAttribute('class', "headers")
-for (let i=0; i < 4; i++) {
+
+for (let i=0; i < 4; i++) { //create table heading
     const table_header = document.createElement('td')
     table_header.innerText = `Header ${i}`
     header_tr.appendChild(table_header)
@@ -19,7 +18,7 @@ for (let i = 0; i < 5; i++) {
         const choices = document.createElement('div')
         const timer_container = document.createElement('div')
         const timer_bar = document.createElement('div')
-        const cellText = document.createTextNode(`col ${j}, cel ${i}`)
+        let cellText = document.createTextNode(`col ${j}, cel ${i}`)
 
         for(let k = 0; k < 4; k++) { // choices 
             const choices_option = document.createElement('p')
@@ -48,27 +47,22 @@ for (let i = 0; i < 5; i++) {
 
     main_table_body.appendChild(row)
 }
+
 main_table.appendChild(main_table_body)
-main_table.setAttribute("border", "1 solid")
-main_table.setAttribute("class", "main_table")
+for(let i=0; i < main_table.rows[0].cells.length; i++) {
+    console.log(main_table.rows[1].cells[i].children)
+}
 
 window.addEventListener("click", function(event) {
     let main = document.getElementById("main_table")
+    console.log(main.rows.length)
     const clicked_element = event.target
     let question = clicked_element.children[0]
     let choices = question.children[1]
 
-    choices.addEventListener("click", function(event) {
-        let clicked_answer = event.target
-        if(clicked_answer.id.includes(question.id)) {
-            main.style.visibility= "visible"
-            question.style.visibility = "hidden"
-        } else {
-            main.style.visibility= "visible"
-            question.style.visibility = "hidden"    
-            console.log("failed, should have gotten " + question.id)
-        }
-
+    choices.addEventListener("click", function() {
+        main.style.visibility= "visible"
+        question.style.visibility = "hidden"
     })
 
     main.style.visibility= "hidden"
