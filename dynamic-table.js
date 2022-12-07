@@ -1,24 +1,25 @@
-const main_table = document.getElementById('main_table')
-const main_table_body = document.createElement('tbody')
-const header_tr = document.createElement("tr")
-header_tr.setAttribute('class', "headers")
+let cell
+const game_table = document.createElement('table')
 
-for (let i=0; i < 4; i++) { //create table heading
-    const table_header = document.createElement('td')
-    table_header.innerText = `Header ${i}`
-    header_tr.appendChild(table_header)
-    main_table_body.appendChild(header_tr)
-}
-for (let i = 0; i < 5; i++) { //create rows
-    const row = document.createElement('tr')
-    for(let j = 0; j < 4; j++) { // create cell
-        const cell = document.createElement('td')
+game_table.setAttribute('id', 'main_table')
+game_table.setAttribute('class', 'main_table')
+
+for (let i = 0; i < 6; i++) {
+    let rows = game_table.insertRow(i)
+    rows.id = `${i}r${i}c`
+    
+    for(let y = 0; y < 4; y++) {
+
+        cell = rows.insertCell(y)
+        cell.id = `r${i}c${y}`
+        cell.innerText = cell.id
+        cell.setAttribute('class', 'boxes')
+
         const question = document.createElement('div')
         const question_p = document.createElement('p')
         const choices = document.createElement('div')
         const timer_container = document.createElement('div')
         const timer_bar = document.createElement('div')
-        let cellText = document.createTextNode(`col ${j}, cel ${i}`)
 
         for(let k = 0; k < 4; k++) { // choices 
             const choices_option = document.createElement('p')
@@ -32,42 +33,19 @@ for (let i = 0; i < 5; i++) { //create rows
         choices.setAttribute('class', "choices")
         question_p.setAttribute('class', "question-color")
         question.setAttribute('class', "questions")
-        question.setAttribute('id', `q${j}`)
-        cell.setAttribute('class', `boxes`)
-            
+
         timer_container.appendChild(timer_bar)
         question.appendChild(question_p)    
         question.appendChild(choices)
         question.appendChild(timer_container)
-        cell.appendChild(cellText)
         cell.appendChild(question)
-        row.appendChild(cell)
 
     }
+} document.body.appendChild(game_table)
 
-    main_table_body.appendChild(row)
+let header = document.getElementById('0r0c')
+header.setAttribute('class', 'headers')
+
+for (let i = 0; i < header.children.length; i++) {
+    header.children[i].removeAttribute('class', 'boxes')
 }
-
-main_table.appendChild(main_table_body)
-for(let i=0; i < main_table.rows[0].cells.length; i++) {
-    console.log(main_table.rows[1].cells[i].children)
-}
-
-window.addEventListener("click", function(event) {
-    let main = document.getElementById("main_table")
-    console.log(main.rows.length)
-    const clicked_element = event.target
-    let question = clicked_element.children[0]
-    let choices = question.children[1]
-
-    choices.addEventListener("click", function() {
-        main.style.visibility= "visible"
-        question.style.visibility = "hidden"
-    })
-
-    main.style.visibility= "hidden"
-    question.style.visibility = "visible"
-    question.style.top = "0px"
-    question.style.right = "0px"
-    question.style.left = "0px"
-})
