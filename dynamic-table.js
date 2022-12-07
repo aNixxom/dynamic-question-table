@@ -1,3 +1,8 @@
+fetch('./questions.json')
+    .then((response) => response.json())
+    .then((data) => console.log(data.questions[0].acronys[0].q))
+
+
 let cell
 const game_table = document.createElement('table')
 
@@ -55,5 +60,4 @@ for(let i = 0; i < 4; i++) {
 let questions = document.querySelectorAll('.questions')
 questions.forEach((element, index) => {
     element.id = `q${index + 1}`
-    element.parentElement.innerText = `q${index + 1}`
 })
