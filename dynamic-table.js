@@ -1,8 +1,6 @@
 fetch('./questions.json')
     .then((response) => response.json())
-    .then((data) => console.log(data.questions[0].acronys[0].q))
-
-
+    .then((info) => console.log(info))
 let cell
 const game_table = document.createElement('table')
 

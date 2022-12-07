@@ -1,4 +1,10 @@
-{
+{   
+    "headings": [
+        "acronys",
+        "general it",
+        "windows",
+        "linux"
+    ],
     "questions":[
         {
             "acronys": [
