@@ -9,9 +9,9 @@ for (let i=0; i < 4; i++) { //create table heading
     header_tr.appendChild(table_header)
     main_table_body.appendChild(header_tr)
 }
-for (let i = 0; i < 5; i++) {
+for (let i = 0; i < 5; i++) { //create rows
     const row = document.createElement('tr')
-    for(let j = 0; j < 4; j++) {
+    for(let j = 0; j < 4; j++) { // create cell
         const cell = document.createElement('td')
         const question = document.createElement('div')
         const question_p = document.createElement('p')
