@@ -1,0 +1,133 @@
+{
+    "questions":[
+        {
+            "acronys": [
+                {
+                    "q": "What does RAM stand for",
+                    "a": "Random Access Memory",
+                    "w1": "Random Aquatic Memory",
+                    "w2": "Related Access Memory"
+                },
+                {
+                    "q": "What does BIOS stand for",
+                    "a": "Basic Input Output System",
+                    "w1": "Bold Input Output Server",
+                    "w2": "Based Input Output System"
+                },
+                {
+                    "q": "What does USB stand for",
+                    "a": "Universal Serial Bus",
+                    "w1": "Universal Secure Bus",
+                    "w2": "Unique Serial Bus"
+                },
+                {
+                    "q": "What does NIC stand for",
+                    "a": "Network Interface Card",
+                    "w1": "Noise Input Card",
+                    "w2": "New Inpit Card"
+                },
+                {
+                    "q": "What does NTFS stand for",
+                    "a": "New Technology File System",
+                    "w1": "New Technology File Server",
+                    "w2": "New Technology Film Server"
+                }
+            ],
+            "general it": [
+                {
+                    "q": "How many bits make one byte",
+                    "a": "8",
+                    "w1": "4",
+                    "w2": "6"
+                },
+                {
+                    "q": "What is the cloud",
+                    "a": "Storage Over The Internet",
+                    "w1": "A Grabage Service",
+                    "w2": "A night club"
+                },
+                {
+                    "q": "A ______ is the registered name of a website",
+                    "a": "Domain",
+                    "w1": "URL",
+                    "w2": "Source"
+                },
+                {
+                    "q": "How does a Fiber Optic Cable transmit signals",
+                    "a": "Light",
+                    "w1": "Death Rays",
+                    "w2": "Copper Wires"
+                },
+                {
+                    "q": "What type of printer uses Fusing ",
+                    "a": "Laser Printer",
+                    "w1": "LED Printer",
+                    "w2": "InkJet Printer"
+                }
+            ],
+            "windows": [
+                {
+                    "q": "What is Windows",
+                    "a": "Operating System",
+                    "w1": "Something you look through",
+                    "w2": "A computer"
+                },
+                {
+                    "q": "What made Windows 8 so different from Windows 7",
+                    "a": "Both answers",
+                    "w1": "Faster boot time",
+                    "w2": "Changed to the start menu"
+                },
+                {
+                    "q": "What is the file extension for a Microsoft Word Document",
+                    "a": "docx",
+                    "w1": "doc",
+                    "w2": "dot"
+                },
+                {
+                    "q": "What is one method to open Task Manager",
+                    "a": "CTRL + SHIFT + ESC",
+                    "w1": "WIN + TAB",
+                    "w2": "WIN + E"
+                }, 
+                {
+                    "q": "What CMD command clears the console",
+                    "a": "CLS",
+                    "w1": "Clear",
+                    "w2": "Clean"
+                }
+            ],
+            "linux": [
+                {
+                    "q": "What what is linux",
+                    "a": "Operating System",
+                    "w1": "YouTuber",
+                    "w2": "Video game"
+                },
+                {
+                    "q": "Is Linux open source",
+                    "a": "True",
+                    "w1": "False"
+                },
+                {
+                    "q": "Name one distribution of Linux",
+                    "a": "Both",
+                    "w1": "Ubuntu",
+                    "w2": "Kali Linux"
+                },
+                {
+                    "q": "What Command is used to show your IP",
+                    "a": "ifconfig",
+                    "w1": "tree",
+                    "w2": "ipconfig"
+                },
+                {
+                    "q": "Who created Linux",
+                    "a": "Linus Torvalds",
+                    "w1": "Bill Gates",
+                    "w2": "Linus Sebastian"
+                }
+            ]
+        }
+    ]
+}
