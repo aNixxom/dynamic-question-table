@@ -1,7 +1,10 @@
+// variable for later use
 let cell
-const game_table = document.createElement('table')
-let correctAnswersList = []
 
+// create main game table
+const game_table = document.createElement('table')
+
+// set game table attributes and add eventlister that is looking for clicks. this will show then hide the questions
 game_table.setAttribute('id', 'main_table')
 game_table.setAttribute('class', 'main_table')
 game_table.addEventListener('click', function(e) {
@@ -15,10 +18,14 @@ game_table.addEventListener('click', function(e) {
     }, 6000)
 })
 
+
+//start setting up the game table 5 deep 
+
 for (let i = 0; i < 5; i++) {
     let rows = game_table.insertRow(i)
-    rows.id = `${i + 1}r${i + 1}c`
+    rows.id = `${i + 1}r${i + 1}c` 
     
+    //setting up the cells 4 wide 
     for(let y = 0; y < 4; y++) {
 
         cell = rows.insertCell(y)
@@ -26,12 +33,15 @@ for (let i = 0; i < 5; i++) {
         cell.innerText = cell.id 
         cell.setAttribute('class', 'boxes')
 
+        // creating the elements that will be "inside" each sell 
         const question = document.createElement('div')
         const question_p = document.createElement('p')
         const choices = document.createElement('div')
         const timer_container = document.createElement('div')
         const timer_bar = document.createElement('div')
 
+
+        // creating the choices and options
         for(let k = 0; k < 3; k++) {
             const choices_option = document.createElement('p')
             choices_option.innerHTML = `${k}`   
@@ -40,13 +50,14 @@ for (let i = 0; i < 5; i++) {
             choices.appendChild(choices_option)
         }
 
+        // setting attributes for styling
         timer_bar.setAttribute('class', "timer-bar")
         timer_container.setAttribute('class', "timer-container")
         choices.setAttribute('class', "choices")
         question_p.setAttribute('class', "question-color")
         question.setAttribute('class', "questions")
-        question.id = `${y}`
 
+        // glueing everything together 
         timer_container.appendChild(timer_bar)
         question.appendChild(question_p)    
         question.appendChild(choices)
@@ -54,22 +65,35 @@ for (let i = 0; i < 5; i++) {
         cell.appendChild(question)
 
     }
-} document.body.appendChild(game_table)
+} document.body.appendChild(game_table) //added it all to the document body
 
+
+// create and add the header section to the game table 
 let headers = game_table.insertRow(0)
 headers.setAttribute('class', 'headers')
-
 for(let i = 0; i < 4; i++) {
     let headercells = headers.insertCell()
-    headercells.innerHTML = `Header ${i + 1}`
 }
 
+
+// variables to be used in the foreach loops 
 let choices = document.querySelectorAll('[data-choice="choice"]')
 let questions = document.querySelectorAll('.questions')
 let questions_text = document.querySelectorAll('.question-color')
+
+//set id for each question. this will be used later 
 questions.forEach((element, index) => {
     element.id = `q${index + 1}`
 })
+
+
+// fetch json
+// use info to add headers, questions, answers and wrong answers to the game table 
+// use foreach and for loops to iterate through different elements to set questions headers ect..
+// made randomnum gen to get a random place for each question everytime you load the page 
+// added if statements to check if the chosen spot was already occupuied my a differnt answer 
+// do-while loop will iterate through the if statement until an empty spot has been found 
+// TODO: add question worth to table cell. (I have no idea how I would do that)   
 
 fetch('./questions.json')
     .then((response) => response.json())
@@ -115,7 +139,7 @@ fetch('./questions.json')
         })
     })
 
-    
+//random gen function     
 function pickRadomElement(max) {
     return Math.floor(Math.random() * max)
 }
