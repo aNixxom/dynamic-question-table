@@ -8,14 +8,18 @@ const game_table = document.createElement('table')
 game_table.setAttribute('id', 'main_table')
 game_table.setAttribute('class', 'main_table')
 game_table.addEventListener('click', function(e) {
-    let question_clicked = e.target.children[0]
-    question_clicked.style.visibility = "visible"
-    question_clicked.style.right = "0px"
-    question_clicked.style.left = "0px"
-    question_clicked.style.top = "0px"
-    setTimeout(function() {
-        question_clicked.style.visibility = "hidden"
-    }, 6000)
+    try {
+        let question_clicked = e.target.children[0]
+        question_clicked.style.visibility = "visible"
+        question_clicked.style.right = "0px"
+        question_clicked.style.left = "0px"
+        question_clicked.style.top = "0px"
+        setTimeout(function() {
+            question_clicked.style.visibility = "hidden"
+        }, 6000)
+    } catch(error) {
+        // Do nothing
+    }
 })
 
 
@@ -78,6 +82,7 @@ for(let i = 0; i < 4; i++) {
 
 // variables to be used in the foreach loops 
 let choices = document.querySelectorAll('[data-choice="choice"]')
+let cells = document.querySelectorAll('.boxes')
 let questions = document.querySelectorAll('.questions')
 let questions_text = document.querySelectorAll('.question-color')
 
@@ -98,17 +103,25 @@ questions.forEach((element, index) => {
 fetch('./questions.json')
     .then((response) => response.json())
     .then((info) => {
+        // get and set category headers from JSON 
         for(let i = 0; i < info['headings'].length; i++) {
             headers.children[i].innerHTML = info['headings'][i]
         }
+        // set question worth for each question
+        cells.forEach((element, index) => {
+            element.childNodes[0].textContent = info['question worth'][index]
+        })
+        // get and set questions from JSON 
         questions_text.forEach((element, index) => {
             element.innerText = info['questions'][index].q
         })
+        // get and set the correct answer for each question from JSON and apply the anser to a random position
         choices.forEach((element, index) => {
             let pickedOption = element.children[pickRadomElement(3)]
             pickedOption.innerHTML = info['choices'][index].a
             pickedOption.setAttribute('data-correct', 'correct')
         })
+        // get and set the fist wrong answer from JSON and apply it to the next open random position
         choices.forEach((element, index) => {
             let pickedOption = element.children[pickRadomElement(3)]
             let pickedFistWrong = false
@@ -123,6 +136,7 @@ fetch('./questions.json')
             }
             while (pickedFistWrong == false)
         })
+        // get and set the second wrong answer from JSON and apply it to the last random position
         choices.forEach((element, index) => {
             let pickedOption = element.children[pickRadomElement(3)]
             let pickedFistWrong = false
@@ -142,4 +156,4 @@ fetch('./questions.json')
 //random gen function
 function pickRadomElement(max) {
     return Math.floor(Math.random() * max)
-}   
+} 
