@@ -66,6 +66,7 @@ body {
     color: var(--theme-blue-points-color);
     cursor: pointer;
     transition: transform 2s;
+    text-align: center;
 }
 
 .boxes:hover {
