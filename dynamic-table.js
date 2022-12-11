@@ -139,7 +139,7 @@ fetch('./questions.json')
         })
     })
 
-//random gen function     
+//random gen function
 function pickRadomElement(max) {
     return Math.floor(Math.random() * max)
-}
+}   
