@@ -76,7 +76,7 @@ for (let i = 0; i < 5; i++) {
 let headers = game_table.insertRow(0)
 headers.setAttribute('class', 'headers')
 for(let i = 0; i < 4; i++) {
-    let headercells = headers.insertCell()
+    headers.insertCell()
 }
 
 
