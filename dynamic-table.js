@@ -98,7 +98,7 @@ questions.forEach((element, index) => {
 // made randomnum gen to get a random place for each question everytime you load the page 
 // added if statements to check if the chosen spot was already occupuied my a differnt answer 
 // do-while loop will iterate through the if statement until an empty spot has been found 
-// TODO: add question worth to table cell. (I have no idea how I would do that)   
+// TODO: add question worth to table cell. (I have no idea how I would do that) (DONE)  
 
 fetch('./questions.json')
     .then((response) => response.json())
