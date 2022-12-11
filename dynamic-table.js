@@ -83,6 +83,7 @@ for(let i = 0; i < 4; i++) {
 // variables to be used in the foreach loops 
 let choices = document.querySelectorAll('[data-choice="choice"]')
 let cells = document.querySelectorAll('.boxes')
+let test = document.querySelectorAll('.boxes')
 let questions = document.querySelectorAll('.questions')
 let questions_text = document.querySelectorAll('.question-color')
 
@@ -90,7 +91,6 @@ let questions_text = document.querySelectorAll('.question-color')
 questions.forEach((element, index) => {
     element.id = `q${index + 1}`
 })
-
 
 // fetch json
 // use info to add headers, questions, answers and wrong answers to the game table 
@@ -150,6 +150,16 @@ fetch('./questions.json')
                 }
             }
             while (pickedFistWrong == false)
+        })
+    })
+
+fetch('./questions.json')
+    .then((response) => response.json())
+    .then((info) => {
+        test.forEach((element, index) => {
+            console.log(element.children[0].children[1])
+            element.childNodes[0].textContent = info['test'][index].value
+            element.children[0].children[0].innerHTML = info['test'][index].q
         })
     })
 
