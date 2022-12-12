@@ -92,7 +92,7 @@ questions.forEach((element, index) => {
 // add question worth to each cell 
 // use foreach and for loops to iterate through different elements to set questions headers ect..
 // made randomnum gen to get a random place for each question everytime you load the page 
-// added if statements to check if the chosen spot was already occupuied my a differnt answer 
+// added if statements to check if the chosen spot was already occupuied by a differnt answer 
 // do-while loop will iterate through the if statement until an empty spot has been found 
 fetch('./questions.json')
     .then((response) => response.json())
@@ -104,7 +104,7 @@ fetch('./questions.json')
         // set question worth & set questions for each cell
         cells.forEach((element, index) => {
             element.childNodes[0].textContent = info['question worth'][index]
-            element.childNodes[1].children[0].innerHTML = info['questions'].q
+            element.childNodes[1].children[0].innerHTML = info['questions'][index].q
         })
         // get and set the correct answer for each question from JSON and apply the anser to a random position
         choices.forEach((element, index) => {
@@ -128,7 +128,7 @@ function getRandomOptionSlot(element, index, option, json) {
     let pickedValidSlot = false
     do {
         if(pickedSlot.hasAttribute('data-correct', 'correct') || pickedSlot.hasAttribute('data-correct', 'w1')) {
-            pickedSlot = element.children[pickRadomElement(3)]
+            pickedSlot = element.children[pickRadomElement(3)] // run function again until a spot has been found
         } else {
             pickedValidSlot = true
             pickedSlot.innerHTML = json['choices'][index][`${option}`]
