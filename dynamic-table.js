@@ -123,47 +123,39 @@ fetch('./questions.json')
         })
         // get and set the fist wrong answer from JSON and apply it to the next open random position
         choices.forEach((element, index) => {
-            let pickedOption = element.children[pickRadomElement(3)]
-            let pickedFistWrong = false
-            do {
-                if(pickedOption.hasAttribute('data-correct', 'correct')) {
-                    pickedOption = element.children[pickRadomElement(3)]
-                } else {
-                    pickedFistWrong = true 
-                    pickedOption.innerHTML = info['choices'][index].w1
-                    pickedOption.setAttribute('data-correct', 'w1')
-                }
-            }
-            while (pickedFistWrong == false)
+            getRandomOptionSlot(element, index, 'w1', info)
         })
         // get and set the second wrong answer from JSON and apply it to the last random position
         choices.forEach((element, index) => {
-            let pickedOption = element.children[pickRadomElement(3)]
-            let pickedFistWrong = false
-            do {
-                if(pickedOption.hasAttribute('data-correct', 'correct') || pickedOption.hasAttribute('data-correct', 'w1')) {
-                    pickedOption = element.children[pickRadomElement(3)]
-                } else {
-                    pickedFistWrong = true 
-                    pickedOption.innerHTML = info['choices'][index].w2
-                    pickedOption.setAttribute('data-correct', 'w2')
-                }
-            }
-            while (pickedFistWrong == false)
+            getRandomOptionSlot(element, index, 'w2', info)
         })
     })
 
-fetch('./questions.json')
-    .then((response) => response.json())
-    .then((info) => {
-        test.forEach((element, index) => {
-            console.log(element.children[0].children[1])
-            element.childNodes[0].textContent = info['test'][index].value
-            element.children[0].children[0].innerHTML = info['test'][index].q
-        })
-    })
+function getRandomOptionSlot(element, index, option, json) {
+    let pickedSlot = element.children[pickRadomElement(3)]
+    let pickedValidSlot = false
+    do {
+        if(pickedSlot.hasAttribute('data-correct', 'correct') || pickedSlot.hasAttribute('data-correct', 'w1')) {
+            pickedSlot = element.children[pickRadomElement(3)]
+        } else {
+            pickedValidSlot = true
+            pickedSlot.innerHTML = json['choices'][index][`${option}`]
+            pickedSlot.setAttribute('data-correct', `${option}`)
+        }
+    }
+    while (pickedValidSlot == false)
+}
+
+// fetch('./questions.json')
+//     .then((response) => response.json())
+//     .then((info) => {
+//         test.forEach((element, index) => {
+//             element.childNodes[0].textContent = info['test'][index].value
+//             element.children[0].children[0].innerHTML = info['test'][index].q
+//         })
+//     })
 
 //random gen function
 function pickRadomElement(max) {
     return Math.floor(Math.random() * max)
-} 
+}   
