@@ -22,9 +22,7 @@ game_table.addEventListener('click', function(e) {
     }
 })
 
-
 //start setting up the game table 5 deep 
-
 for (let i = 0; i < 5; i++) {
     let rows = game_table.insertRow(i)
     rows.id = `${i + 1}r${i + 1}c` 
@@ -43,7 +41,6 @@ for (let i = 0; i < 5; i++) {
         const choices = document.createElement('div')
         const timer_container = document.createElement('div')
         const timer_bar = document.createElement('div')
-
 
         // creating the choices and options
         for(let k = 0; k < 3; k++) {
@@ -71,14 +68,12 @@ for (let i = 0; i < 5; i++) {
     }
 } document.body.appendChild(game_table) //added it all to the document body
 
-
 // create and add the header section to the game table 
 let headers = game_table.insertRow(0)
 headers.setAttribute('class', 'headers')
 for(let i = 0; i < 4; i++) {
     headers.insertCell()
 }
-
 
 // variables to be used in the foreach loops 
 let choices = document.querySelectorAll('[data-choice="choice"]')
@@ -99,7 +94,6 @@ questions.forEach((element, index) => {
 // made randomnum gen to get a random place for each question everytime you load the page 
 // added if statements to check if the chosen spot was already occupuied my a differnt answer 
 // do-while loop will iterate through the if statement until an empty spot has been found 
-
 fetch('./questions.json')
     .then((response) => response.json())
     .then((info) => {
@@ -107,13 +101,10 @@ fetch('./questions.json')
         for(let i = 0; i < info['headings'].length; i++) {
             headers.children[i].innerHTML = info['headings'][i]
         }
-        // set question worth for each question
+        // set question worth & set questions for each cell
         cells.forEach((element, index) => {
             element.childNodes[0].textContent = info['question worth'][index]
-        })
-        // get and set questions from JSON 
-        questions_text.forEach((element, index) => {
-            element.innerText = info['questions'][index].q
+            element.childNodes[1].children[0].innerHTML = info['questions'].q
         })
         // get and set the correct answer for each question from JSON and apply the anser to a random position
         choices.forEach((element, index) => {
@@ -131,6 +122,7 @@ fetch('./questions.json')
         })
     })
 
+// function to get random position for question options
 function getRandomOptionSlot(element, index, option, json) {
     let pickedSlot = element.children[pickRadomElement(3)]
     let pickedValidSlot = false
@@ -145,15 +137,6 @@ function getRandomOptionSlot(element, index, option, json) {
     }
     while (pickedValidSlot == false)
 }
-
-// fetch('./questions.json')
-//     .then((response) => response.json())
-//     .then((info) => {
-//         test.forEach((element, index) => {
-//             element.childNodes[0].textContent = info['test'][index].value
-//             element.children[0].children[0].innerHTML = info['test'][index].q
-//         })
-//     })
 
 //random gen function
 function pickRadomElement(max) {
