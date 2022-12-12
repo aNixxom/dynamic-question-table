@@ -21,6 +21,7 @@
 body {
     margin: auto;
     height: 99.5vh;
+    background-color: black;
 }
 
 .main_table {
@@ -88,6 +89,7 @@ body {
     margin-top: 12%;
     visibility: hidden;
     text-align: center;
+    border: 2px solid #d7a04b;
 }
 
 .timer-container {

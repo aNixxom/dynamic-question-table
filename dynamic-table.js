@@ -10,12 +10,14 @@ game_table.setAttribute('class', 'main_table')
 game_table.addEventListener('click', function(e) {
     try {
         let question_clicked = e.target.children[0]
+        document.getElementById('main_table').style.visibility = "hidden"
         question_clicked.style.visibility = "visible"
         question_clicked.style.right = "0px"
         question_clicked.style.left = "0px"
         question_clicked.style.top = "0px"
         setTimeout(function() {
             question_clicked.style.visibility = "hidden"
+            document.getElementById('main_table').style.visibility = "visible"
         }, 6000)
     } catch(error) {
         // Do nothing
