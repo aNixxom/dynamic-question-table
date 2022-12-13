@@ -105,13 +105,13 @@ fetch('./questions.json')
         }
         // set question worth & set questions for each cell
         cells.forEach((element, index) => {
-            element.childNodes[0].textContent = info['question worth'][index]
+            element.childNodes[0].textContent = info['questions'][index].value
             element.childNodes[1].children[0].innerHTML = info['questions'][index].q
         })
-        // get and set the correct answer for each question from JSON and apply the anser to a random position
+        // get and set the correct answer for each question from JSON and apply the answer to a random position
         choices.forEach((element, index) => {
             let pickedOption = element.children[pickRadomElement(3)]
-            pickedOption.innerHTML = info['choices'][index].a
+            pickedOption.innerHTML = info['questions'][index].a
             pickedOption.setAttribute('data-correct', 'correct')
         })
         // get and set the fist wrong answer from JSON and apply it to the next open random position
@@ -123,7 +123,6 @@ fetch('./questions.json')
             getRandomOptionSlot(element, index, 'w2', info)
         })
     })
-
 // function to get random position for question options
 function getRandomOptionSlot(element, index, option, json) {
     let pickedSlot = element.children[pickRadomElement(3)]
@@ -133,7 +132,7 @@ function getRandomOptionSlot(element, index, option, json) {
             pickedSlot = element.children[pickRadomElement(3)] // run function again until a spot has been found
         } else {
             pickedValidSlot = true
-            pickedSlot.innerHTML = json['choices'][index][`${option}`]
+            pickedSlot.innerHTML = json['questions'][index][`${option}`]
             //if a question is only True/False we want to remove a third option that will be undefined
             if(pickedSlot.innerHTML === "undefined") {
                 pickedSlot.remove()
@@ -143,6 +142,7 @@ function getRandomOptionSlot(element, index, option, json) {
     }
     while (pickedValidSlot == false)
 }
+
 
 //random gen function
 function pickRadomElement(max) {
