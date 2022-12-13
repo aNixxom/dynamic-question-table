@@ -134,6 +134,10 @@ function getRandomOptionSlot(element, index, option, json) {
         } else {
             pickedValidSlot = true
             pickedSlot.innerHTML = json['choices'][index][`${option}`]
+            //if a question is only True/False we want to remove a third option that will be undefined
+            if(pickedSlot.innerHTML === "undefined") {
+                pickedSlot.remove()
+            }
             pickedSlot.setAttribute('data-correct', `${option}`)
         }
     }
