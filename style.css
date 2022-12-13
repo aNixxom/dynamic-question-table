@@ -150,3 +150,7 @@ body {
     background-color: yellow;
     color: red;
 }
+
+u {
+    text-transform: uppercase;
+}

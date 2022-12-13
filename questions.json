@@ -30,65 +30,65 @@
     ],
     "questions":[
         {
-            "q": "What does RAM stand for"
+            "q": "What does <u>RAM</u> stand for"
         },
         {
-            "q": "How many bits make one byte"
+            "q": "How many <u>BITS</u> make one <u>BYTE</u>"
         },
         {
-            "q": "What is Windows"
+            "q": "What is <u>WINDOWS</u>"
         },
         {
-            "q": "What what is linux"
+            "q": "What is <u>LINUX</u>"
         },
         {
-            "q": "What does BIOS stand for"
+            "q": "What does <u>BIOS</u> stand for"
         },
         {
-            "q": "What is the cloud"
+            "q": "What is the <u>CLOUD</u>"
         },
         {
-            "q": "What made Windows 8 so different from Windows 7"
+            "q": "What made <u>WINDOWS 8</u> so different from <u>WINDOWS 7</u>"
         },
         {
-            "q": "Is Linux open source"
+            "q": "Is <u>LINUX</u> open source"
         },
 
         {
-            "q": "What does USB stand for"
+            "q": "What does <u>USB</u> stand for"
         },
         {
             "q": "A ______ is the registered name of a website"
         }, 
         {
-            "q": "What is the file extension for a Microsoft Word Document"
+            "q": "What is the file extension for a <u>Microsoft Word Document</u>"
         },
         {
-            "q": "Name one distribution of Linux"
+            "q": "Name one distribution of <u>Linux</u>"
         },
         {
-            "q": "What does NIC stand for"
+            "q": "What does <u>NIC</u> stand for"
         },
         {
-            "q": "How does a Fiber Optic Cable transmit signals"
+            "q": "How does a <u>Fiber Optic Cable</u> transmit signals"
         },
         {
-            "q": "What is one method to open Task Manager"
+            "q": "What is one method to open <u>Task Manager</u>"
         },
         {
-            "q": "What Command is used to show your IP"
+            "q": "What Command is used to show your <u>IP</u>"
         },
         {
-            "q": "What does NTFS stand for"
+            "q": "What does <u>NTFS</u> stand for"
         },
         {
-            "q": "What type of printer uses Fusing"
+            "q": "What type of printer uses <u>Fusing</u>"
         },
         {
-            "q": "What CMD command clears the console"
+            "q": "What <u>CMD command</u> clears the console"
         },
         {
-            "q": "Who created Linux"
+            "q": "Who created <u>Linux</u>"
         }
     ],
     "choices":[
@@ -143,9 +143,9 @@
             "w2": "Source"
         }, 
         {
-            "a": "docx",
-            "w1": "doc",
-            "w2": "dot"
+            "a": ".docx",
+            "w1": ".doc",
+            "w2": ".dot"
         },
         {
             "a": "Both",
