@@ -5,195 +5,165 @@
         "windows",
         "linux"
     ],
-    "questions":[
+    "questions": [
         {
-            "q": "What does <u>RAM</u> stand for"
-        },
-        {
-            "q": "How many <u>BITS</u> make one <u>BYTE</u>"
-        },
-        {
-            "q": "What is <u>WINDOWS</u>"
-        },
-        {
-            "q": "What is <u>LINUX</u>"
-        },
-        {
-            "q": "What does <u>BIOS</u> stand for"
-        },
-        {
-            "q": "What is the <u>CLOUD</u>"
-        },
-        {
-            "q": "What made <u>WINDOWS 8</u> so different from <u>WINDOWS 7</u>"
-        },
-        {
-            "q": "Is <u>LINUX</u> open source"
-        },
-
-        {
-            "q": "What does <u>USB</u> stand for"
-        },
-        {
-            "q": "A ______ is the registered name of a website"
-        }, 
-        {
-            "q": "What is the file extension for a <u>Microsoft Word Document</u>"
-        },
-        {
-            "q": "Name one distribution of <u>Linux</u>"
-        },
-        {
-            "q": "What does <u>NIC</u> stand for"
-        },
-        {
-            "q": "How does a <u>Fiber Optic Cable</u> transmit signals"
-        },
-        {
-            "q": "What is one method to open <u>Task Manager</u>"
-        },
-        {
-            "q": "What Command is used to show your <u>IP</u>"
-        },
-        {
-            "q": "What does <u>NTFS</u> stand for"
-        },
-        {
-            "q": "What type of printer uses <u>Fusing</u>"
-        },
-        {
-            "q": "What <u>CMD command</u> clears the console"
-        },
-        {
-            "q": "Who created <u>Linux</u>"
-        }
-    ],
-    "choices":[
-        {
+            "value": "$200",
+            "bonusValue": "$400",
+            "q": "What does <u>RAM</u> stand for",
             "a": "Random Access Memory",
             "w1": "Random Aquatic Memory",
             "w2": "Related Access Memory"
         },
         {
+            "value": "$200",
+            "bonusValue": "$400",
+            "q": "How many <u>BITS</u> make one <u>BYTE</u>",
             "a": "8",
             "w1": "4",
             "w2": "6"
         },
         {
+            "value": "$200",
+            "bonusValue": "$400",
+            "q": "What is <u>WINDOWS</u>",
             "a": "Operating System",
             "w1": "Something you look through",
             "w2": "A computer"
         },
         {
+            "value": "$200",
+            "bonusValue": "$400",
+            "q": "What is <u>LINUX</u>",
             "a": "Operating System",
             "w1": "YouTuber",
             "w2": "Video game"
         },
         {
+            "value": "$400",
+            "bonusValue": "$800",
+            "q": "What does <u>BIOS</u> stand for",
             "a": "Basic Input Output System",
             "w1": "Bold Input Output Server",
             "w2": "Based Input Output System"
         },
         {
+            "value": "$400",
+            "bonusValue": "$800",
+            "q": "What is the <u>CLOUD</u>",
             "a": "Storage Over The Internet",
             "w1": "A Grabage Service",
             "w2": "A night club"
         },
         {
+            "value": "$400",
+            "bonusValue": "$800",
+            "q": "What made <u>WINDOWS 8</u> so different from <u>WINDOWS 7</u>",
             "a": "Both answers",
             "w1": "Faster boot time",
             "w2": "Changed to the start menu"
         },
         {
+            "value": "$400",
+            "bonusValue": "$800",
+            "q": "<u>LINUX</u> is open source",
             "a": "True",
             "w1": "False"
         },
-
         {
+            "value": "$600",
+            "bonusValue": "$1200",
+            "q": "What does <u>USB</u> stand for",
             "a": "Universal Serial Bus",
             "w1": "Universal Secure Bus",
             "w2": "Unique Serial Bus"
         },
         {
+            "value": "$600",
+            "bonusValue": "$1200",
+            "q": "A ______ is the registered name of a website",
             "a": "Domain",
             "w1": "URL",
             "w2": "Source"
-        }, 
+        },
         {
+            "value": "$600",
+            "bonusValue": "$1200",
+            "q": "What is the file extension for a <u>Microsoft Word Document</u>",
             "a": ".docx",
             "w1": ".doc",
             "w2": ".dot"
         },
         {
+            "value": "$600",
+            "bonusValue": "$1200",
+            "q": "Pick one distribution of <u>Linux</u>",
             "a": "Both",
             "w1": "Ubuntu",
             "w2": "Kali Linux"
         },
         {
+            "value": "$800",
+            "bonusValue": "$1600",
+            "q": "What does <u>NIC</u> stand for",
             "a": "Network Interface Card",
             "w1": "Noise Input Card",
             "w2": "New Inpit Card"
         },
         {
+            "value": "$800",
+            "bonusValue": "$1600",
+            "q": "How does a <u>Fiber Optic Cable</u> transmit signals",
             "a": "Light",
             "w1": "Death Rays",
             "w2": "Copper Wires"
         },
         {
+            "value": "$800",
+            "bonusValue": "$1600",
+            "q": "What is one method to open <u>Task Manager</u>",
             "a": "CTRL + SHIFT + ESC",
             "w1": "WIN + TAB",
             "w2": "WIN + E"
         },
         {
+            "value": "$800",
+            "bonusValue": "$1600",  
+            "q": "What Command is used to show your <u>IP</u>",
             "a": "ifconfig",
             "w1": "tree",
             "w2": "ipconfig"
         },
         {
+            "value": "$1000",
+            "bonusValue": "$2000",
+            "q": "What does <u>NTFS</u> stand for",
             "a": "New Technology File System",
             "w1": "New Technology File Server",
             "w2": "New Technology Film Server"
         },
         {
+            "value": "$1000",
+            "bonusValue": "$2000",
+            "q": "What type of printer uses <u>Fusing</u>",
             "a": "Laser Printer",
             "w1": "LED Printer",
             "w2": "InkJet Printer"
         },
         {
+            "value": "$1000",
+            "bonusValue": "$2000",
+            "q": "What <u>command-line command</u> clears the console",
             "a": "CLS",
             "w1": "Clear",
             "w2": "Clean"
         },
         {
+            "value": "1000",
+            "bonusValue": "$2000",
+            "q": "Who created <u>Linux</u>",
             "a": "Linus Torvalds",
             "w1": "Bill Gates",
             "w2": "Linus Sebastian"
         }
-    ],
-    "question worth": [
-        "$200",
-        "$200",
-        "$200",
-        "$200",
-
-        "$400",
-        "$400",
-        "$400",
-        "$400",
-
-        "$600",
-        "$600",
-        "$600",
-        "$600",
-
-        "$800",
-        "$800",
-        "$800",
-        "$800",
-
-        "$1000",
-        "$1000",
-        "$1000",
-        "$1000"
     ]
 }
