@@ -49,7 +49,6 @@ for (let i = 0; i < 5; i++) {
             const choices_option = document.createElement('p')
             choices_option.innerHTML = `${k}`   
             choices.setAttribute('data-choice', 'choice')
-            choices_option.setAttribute('data-choice', 'option')
             choices.appendChild(choices_option)
         }
 
@@ -106,17 +105,14 @@ fetch('./questions.json')
         // set question worth & set questions for each cell
         cells.forEach((element, index) => {
             element.childNodes[0].textContent = info['questions'][index].value
-            element.childNodes[1].children[0].innerHTML = info['questions'][index].q
+            element.childNodes[1].children[0].innerHTML = info['questions'][index]['question']
         })
         // get and set the correct answer for each question from JSON and apply the answer to a random position
         // get the wrong answers and set them to a random position 
         choices.forEach((element, index) => {
-            let pickedOption = element.children[pickRadomElement(3)]
-            pickedOption.innerHTML = info['questions'][index].a
-            pickedOption.setAttribute('data-correct', 'correct')
-
-            getRandomOptionSlot(element, index, 'w1', info)
-            getRandomOptionSlot(element, index, 'w2', info)
+            getRandomOptionSlot(element, index, 'answer', info)
+            getRandomOptionSlot(element, index, 'wrong_1', info)
+            getRandomOptionSlot(element, index, 'wrong_2', info)
         })
     })
 // function to get random position for question options
@@ -124,7 +120,7 @@ function getRandomOptionSlot(element, index, option, json) {
     let pickedSlot = element.children[pickRadomElement(3)]
     let pickedValidSlot = false
     do {
-        if(pickedSlot.hasAttribute('data-correct', 'correct') || pickedSlot.hasAttribute('data-correct', 'w1')) {
+        if(pickedSlot.hasAttribute('data-choices', 'correct') || pickedSlot.hasAttribute('data-choices', 'wrong_1')) {
             pickedSlot = element.children[pickRadomElement(3)] // run function again until a spot has been found
         } else {
             pickedValidSlot = true
@@ -133,7 +129,7 @@ function getRandomOptionSlot(element, index, option, json) {
             if(pickedSlot.innerHTML === "undefined") {
                 pickedSlot.remove()
             }
-            pickedSlot.setAttribute('data-correct', `${option}`)
+            pickedSlot.setAttribute('data-choices', `${option}`)
         }
     }
     while (pickedValidSlot == false)
