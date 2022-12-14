@@ -114,12 +114,9 @@ fetch('./questions.json')
             pickedOption.innerHTML = info['questions'][index].a
             pickedOption.setAttribute('data-correct', 'correct')
         })
-        // get and set the fist wrong answer from JSON and apply it to the next open random position
+        // get and set both wrong answers in random spots 
         choices.forEach((element, index) => {
             getRandomOptionSlot(element, index, 'w1', info)
-        })
-        // get and set the second wrong answer from JSON and apply it to the last random position
-        choices.forEach((element, index) => {
             getRandomOptionSlot(element, index, 'w2', info)
         })
     })
