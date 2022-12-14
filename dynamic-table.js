@@ -109,13 +109,12 @@ fetch('./questions.json')
             element.childNodes[1].children[0].innerHTML = info['questions'][index].q
         })
         // get and set the correct answer for each question from JSON and apply the answer to a random position
+        // get the wrong answers and set them to a random position 
         choices.forEach((element, index) => {
             let pickedOption = element.children[pickRadomElement(3)]
             pickedOption.innerHTML = info['questions'][index].a
             pickedOption.setAttribute('data-correct', 'correct')
-        })
-        // get and set both wrong answers in random spots 
-        choices.forEach((element, index) => {
+
             getRandomOptionSlot(element, index, 'w1', info)
             getRandomOptionSlot(element, index, 'w2', info)
         })
