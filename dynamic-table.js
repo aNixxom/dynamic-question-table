@@ -10,6 +10,7 @@ game_table.setAttribute('class', 'main_table')
 game_table.addEventListener('click', function(e) {
     try {
         let question_clicked = e.target.children[0]
+        question_clicked.children[2].children[0].setAttribute("id", 'play-timer-animation')
         document.getElementById('main_table').style.visibility = "hidden"
         question_clicked.style.visibility = "visible"
         question_clicked.style.right = "0px"
@@ -18,6 +19,7 @@ game_table.addEventListener('click', function(e) {
         setTimeout(function() {
             question_clicked.style.visibility = "hidden"
             document.getElementById('main_table').style.visibility = "visible"
+            question_clicked.children[2].children[0].removeAttribute("id", 'play-timer-animation')
         }, 6000)
     } catch(error) {
         // Do nothing
