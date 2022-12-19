@@ -1,5 +1,6 @@
 // variable for later use
 let cell
+let qlen = 6000
 
 // create main game table
 const game_table = document.createElement('table')
@@ -11,6 +12,7 @@ game_table.addEventListener('click', function(e) {
     try {
         let question_clicked = e.target.children[0]
         question_clicked.children[2].children[0].setAttribute("id", 'play-timer-animation')
+        document.getElementById("play-timer-animation").style.animationDuration = qlen / 1000 + "s"
         document.getElementById('main_table').style.visibility = "hidden"
         question_clicked.style.visibility = "visible"
         question_clicked.style.right = "0px"
@@ -20,7 +22,7 @@ game_table.addEventListener('click', function(e) {
             question_clicked.style.visibility = "hidden"
             document.getElementById('main_table').style.visibility = "visible"
             question_clicked.children[2].children[0].removeAttribute("id", 'play-timer-animation')
-        }, 6000)
+        }, qlen)
     } catch(error) {
         // Do nothing
     }
