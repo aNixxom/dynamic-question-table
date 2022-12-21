@@ -1,37 +1,40 @@
 // variable for later use
 let cell
-let qlen = 6000
+let question_length = 6000
 
 // create main game table
 const game_table = document.createElement('table')
 
-// set game table attributes and add eventlister that is looking for clicks. this will show then hide the questions
+// set game table attributes and add eventlister that is looking for clicks. this will show then hide the questions & play timer-bar animation
 game_table.setAttribute('id', 'main_table')
 game_table.setAttribute('class', 'main_table')
-game_table.addEventListener('click', function(e) {
-    try {
-        let question_clicked = e.target.children[0]
-        question_clicked.children[2].children[0].setAttribute("id", 'play-timer-animation')
-        document.getElementById("play-timer-animation").style.animationDuration = qlen / 1000 + "s"
-        document.getElementById('main_table').style.visibility = "hidden"
-        question_clicked.style.visibility = "visible"
-        question_clicked.style.right = "0px"
-        question_clicked.style.left = "0px"
-        question_clicked.style.top = "0px"
+
+game_table.addEventListener('click', function(event) {
+    if(event.target.hasAttribute('data-question')) {
+        let clicked_question = event.target.children[0]
+        let question_timer = clicked_question.children[2].children[0]
+        let main_table = document.getElementById('main_table')
+        
+        question_timer.setAttribute('id', "play-timer-animation")
+        document.getElementById('play-timer-animation').style.animationDuration = question_length / 1000 + "s"
+        main_table.style.visibility = "hidden"
+        clicked_question.style.visibility = "visible"
+        clicked_question.style.right = "0px"
+        clicked_question.style.left = "0px"
+        clicked_question.style.top = "0px"
+
         setTimeout(function() {
-            question_clicked.style.visibility = "hidden"
-            document.getElementById('main_table').style.visibility = "visible"
-            question_clicked.children[2].children[0].removeAttribute("id", 'play-timer-animation')
-        }, qlen)
-    } catch(error) {
-        // Do nothing
+            clicked_question.style.visibility = "hidden"
+            main_table.style.visibility = "visible"
+            question_timer.removeAttribute('id', 'play-timer-animation')
+        }, question_length)
     }
 })
 
 //start setting up the game table 5 deep 
 for (let i = 0; i < 5; i++) {
     let rows = game_table.insertRow(i)
-    rows.id = `${i + 1}r${i + 1}c` 
+    rows.id = `${i + 1}r${i + 1}c`
     
     //setting up the cells 4 wide 
     for(let y = 0; y < 4; y++) {
@@ -40,6 +43,7 @@ for (let i = 0; i < 5; i++) {
         cell.id = `r${i + 1}c${y + 1}`
         cell.innerText = cell.id 
         cell.setAttribute('class', 'boxes')
+        cell.setAttribute('data-question', 'box')
 
         // creating the elements that will be "inside" each sell 
         const question = document.createElement('div')
